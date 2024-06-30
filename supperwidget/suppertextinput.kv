@@ -1,1 +1,38 @@
 
+<SupperTextinput>:
+	
+	hint_text: 'Enter A Username'
+
+	color: 0, 0, 0, 1
+	hint_text_color: 0, 0, 0, 1
+	background_color: 0, 0, 0, 0
+
+	halign: "center"
+	valign: "middle"
+	padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]	
+	
+	multiline: False
+	readonly: False	
+	on_focus: root.focused_anim(self.size, self.pos)
+	canvas.before:
+		Color: 
+			rgba: 1, 1, 1, 1
+		RoundedRectangle:
+			size: root.rec_x, root.size[1]
+			pos: root.rec_px, root.pos[1]
+			texture: Gradient.horizontal(get_color_from_hex(root.gr_left), get_color_from_hex(root.gr_right))
+		
+		Color: 
+			rgba: 0, 0, 0, 1
+		Line:
+			width: root.underline_width
+			#points: (root.pos[0] + 20, root.pos[1]+4, root.pos[0]+root.size[0]-20, root.pos[1]+4)
+			points: (root.start_x, root.pos[1] + root.line_h, root.end_x, root.pos[1] + root.line_h)
+
+		Rectangle:
+			size: 64, 64   ###### this is the icon size        ### also this 64
+			pos: root.pos[0] - root.icon_offset, root.pos[1] + (root.size[1]-64)/2
+			source: root.icon_source if hasattr(root, 'icon_source') else ''
+
+			source: root.icon_source
+		 
