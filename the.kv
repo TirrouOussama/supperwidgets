@@ -1,0 +1,65 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Gradient kivy_gradient.Gradient
+
+
+
+<fscreen>
+	canvas.before:
+		Color: 
+			rgba: 1 ,1, 1, 1
+
+		Rectangle:
+			size: root.size
+			pos: 0, 0
+
+	GridLayout:
+		cols: 1 
+		spacing: 30
+		size: root.width*0.6, root.height*0.25
+		pos: root.width*0.2, root.height*0.5
+
+
+		SupperTextinput:
+			id: user_input
+			icon_source: 'icons/user.png'
+			hint_text: 'Enter Username'
+			gr_left: '#2f36f7'        			#### this is gradient color left
+			gr_right: '#f72fb8'		  			#### this is gradient color right
+			icon_offset: 100          			#### how left is the icon 
+			underline_width: 4        			####  the width of the underline
+			line_h: 15                			####  the height of the underline
+
+
+
+		SupperTextinput:
+			id: mail_input
+			icon_source: 'icons/mail.png'   	### this is the icon displayed left to text input
+			hint_text: 'Enter Email'
+			gr_left: '#2f5af7'
+			gr_right: '#f72fd9'
+			icon_offset: 100
+			underline_width: 4
+			line_h: 15
+
+
+
+		SupperTextinput:
+			id: phone_input
+			icon_source: 'icons/phone.png'
+			hint_text: 'Enter phone Number'
+			gr_left: '#2f86f7'
+			gr_right: '#f12ff7'
+			icon_offset: 100	
+			underline_width: 4
+			line_h: 15
+
+
+		SupperTextinput:
+			id: pass_input
+			icon_source: 'icons/pass.png'
+			hint_text: 'Enter Password'
+			gr_left: '#2fb8f7'
+			gr_right: '#c92ff7'
+			icon_offset: 100
+			underline_width: 4
+			line_h: 15
