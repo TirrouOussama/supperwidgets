@@ -1,7 +1,4 @@
-all custom widgets has are demo-ed on main.py
-
-
-this repo has the following custom widgets:
+#this repo has the following custom widgets:
   
     
 		SupperTextinput:                  ### this is a custom textinput
@@ -20,3 +17,4 @@ this repo has the following custom widgets:
 .
 .
 .
+#Note:all custom widgets has are demo-ed on main.py
