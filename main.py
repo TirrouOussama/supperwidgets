@@ -36,8 +36,10 @@ class fscreen(Widget):
 		self.ids.lbl.text_saved = 'SupperLabel has been modified'
 		self.ids.lbl.text = ''
 		self.ids.lbl.letters_list = list(self.ids.lbl.text_saved)
+		
+		Clock.unschedule(self.ids.lbl.animate_text)
 		self.ids.lbl.cnt_anim = 0
-
+		Clock.schedule_interval(self.ids.lbl.animate_text, 0.2)
 
 class theapp(App):
 	def build(self):
