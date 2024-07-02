@@ -3,6 +3,7 @@ import kivy
 from kivy.uix.gridlayout import GridLayout
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget 
@@ -21,10 +22,22 @@ from kivy.lang import Builder
 ########################################################
 from supperwidget.suppertextinput import SupperTextinput
 Builder.load_file('supperwidget/suppertextinput.kv')
+from supperwidget.supperbutton import SupperButton
+Builder.load_file('supperwidget/supperbutton.kv')
+from supperwidget.supperlabel import SupperLabel
+Builder.load_file('supperwidget/supperlabel.kv')
+
 ########################################################
 class fscreen(Widget):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)	
+
+	def modify_lbl(self):
+		self.ids.lbl.text_saved = 'SupperLabel has been modified'
+		self.ids.lbl.text = ''
+		self.ids.lbl.letters_list = list(self.ids.lbl.text_saved)
+		self.ids.lbl.cnt_anim = 0
+
 
 class theapp(App):
 	def build(self):
