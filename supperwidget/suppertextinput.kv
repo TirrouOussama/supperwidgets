@@ -21,7 +21,9 @@
 			size: root.rec_x, root.size[1]
 			pos: root.rec_px, root.pos[1]
 			texture: Gradient.horizontal(get_color_from_hex(root.gr_left), get_color_from_hex(root.gr_right))
-		
+			radius: [root.size[1]/2,root.size[1]/2,root.size[1]/2,root.size[1]/2]
+
+
 		Color: 
 			rgba: 0, 0, 0, 1
 		Line:
@@ -33,6 +35,23 @@
 			size: 64, 64   ###### this is the icon size        ### also this 64
 			pos: root.pos[0] - root.icon_offset, root.pos[1] + (root.size[1]-64)/2
 			source: root.icon_source if hasattr(root, 'icon_source') else ''
-
 			source: root.icon_source
 		 
+		Color:
+			rgba: root.border_color
+
+		Line:
+			width: root.border_width
+			points: (root.pos[0]+ root.size[1]/2, root.pos[1], root.pos[0] + root.size[0] - root.size[1]/2, root.pos[1])
+
+		Line:
+			width: root.border_width
+			circle: (root.pos[0]+ root.size[1]/2, root.pos[1]+ root.size[1]/2, root.size[1]/2, 0, -180 )
+
+		Line:
+			width: root.border_width
+			points: (root.pos[0]+ root.size[1]/2, root.pos[1] + root.size[1], root.pos[0] + root.size[0] - root.size[1]/2, root.pos[1] + root.size[1])
+
+		Line:
+			width: root.border_width
+			circle: (root.pos[0] + root.size[0] - root.size[1]/2, root.pos[1]+ root.size[1]/2, root.size[1]/2, 0, 180 )
